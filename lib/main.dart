@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Wireless term project',  
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => MainScreen(),
-        '/gamescreen': (context) => GameScreen(),
+        '/gamescreen': (context) => GameScreen(dbi: FirebaseDB()),
         '/leaderboard': (context) => LeaderboardScreen(dbi: FirebaseDB()),
       },
     );
