@@ -1,22 +1,15 @@
-import 'package:wireless_term_project/db/firebase.dart';
-import 'package:wireless_term_project/db/db.dart';
-// import 'package:wireless_term_project/db/mockdb.dart';
-// import 'package:wireless_term_project/screens/game_screen.dart';
-// import 'package:flutter_test/flutter_test.dart';
-// import 'package:flutter/material.dart';
-
+import 'package:wireless_term_project/screens/game_screen.dart';
+import 'package:flutter_test/flutter_test.dart';
 void main(){
-  // testWidgets('Check Gamescreen', (tester) async {
-    // Widget gs = GameScreen();
-    // await tester.pumpWidget();
 
-    // MockDB().mockDB
-  
-  // });
-  // await tester.pumpAndSettle();
+  test("parse JSON", () {
+    String mockName = "Pingping";
+    int mockScore = 100;
+    String j = "{\"name\": \"$mockName\", \"score\": $mockScore}";
+    Map d = parseJSON(j);
+    expect(mockName, d["name"]);
+    expect(mockScore, d["score"]);
 
-  DB db = FirebaseDB();
-
-  db.addScore(DateTime.now(), "ac", 0);
+  });
   
 }

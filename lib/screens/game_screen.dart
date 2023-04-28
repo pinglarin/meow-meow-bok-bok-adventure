@@ -6,6 +6,11 @@ import 'package:wireless_term_project/db/firebase.dart';
 import 'package:wireless_term_project/db/db.dart';
 import 'package:wireless_term_project/db/mockdb.dart';
 
+
+Map<String, dynamic> parseJSON(String str){
+  return json.decode(str);
+}
+
 class GameScreen extends StatefulWidget {
 
   DB db = MockDB();
@@ -81,7 +86,7 @@ class _SimpleScreenState extends State<GameScreen> {
     String msg = message.toString();
     print('Received message from unity: ${msg}');
     // ensure (score, name)
-    Map decoded = json.decode(msg);
+    Map<String, dynamic> decoded = parseJSON(msg);
     num score = decoded["score"];
     String name = decoded["name"];
     DateTime dt = DateTime.now();
