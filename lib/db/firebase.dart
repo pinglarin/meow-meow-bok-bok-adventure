@@ -15,7 +15,7 @@ class FirebaseDB extends DB {
   @override
   Future<void> addScore(DateTime dt, String name, num score) async {
     DatabaseReference ref = FirebaseDatabase.instance.ref();
-    DatabaseReference scoreRef = ref.child("/score");
+    DatabaseReference scoreRef = ref.child("/scores");
     // if(!scoreRef.){}
     DatabaseReference newScoreRef = scoreRef.push();
     newScoreRef.set({
@@ -31,12 +31,12 @@ class FirebaseDB extends DB {
     DataSnapshot maybeScoreList = await ref.child("/scores").get();
     List<ScoreRecord> scoreRecord = [];
     if(maybeScoreList.exists){
-      // Assume the scoreList is List<Map<String, dynamic>>
-      List<Object?> scoreList = maybeScoreList.value as List<Object?>;
+      // Assume the scoreList is Map<String, Map<String, dynamic>>
+      Map scoreList = maybeScoreList.value as Map;
       scoreRecord.addAll(
-        scoreList.map((e) {
+        scoreList.values.map((e) {
           Map m = e as Map;
-          return ScoreRecord(DateTime.fromMillisecondsSinceEpoch(m["timestamp"]), m["name"], m["score"]);
+          return ScoreRecord(DateTime.fromMillisecondsSinceEpoch(m["timestamp"]), m["name"] != "" ? m["name"] : "Player 1", m["score"]);
         })
       );
     }
