@@ -21,15 +21,19 @@ ITCS424's term project. A mobile application written in Flutter that uses Unity 
 
 #### Firebase Realtime database setup
 
-We also provided the firebase realtime database connector within the code which you may use. However, if you may open one yourself, have a look in [realtime database tutorial for flutter](https://firebase.google.com/docs/database/flutter/start).
-
+You may open Firebase Realtime database yourself, have a look in [realtime database tutorial for flutter](https://firebase.google.com/docs/database/flutter/start).
 
 #### Run
 
-(We recommended to) Connect the android phone to the computer and then 
+(We recommended to) Connect the android phone to the computer.
+
+For debug build
+
 ```bash
 flutter run
 ```
+
+The application can't ran on system with x86 architecture (if you persist to run on emulator, you must run it on arm64 emulator from android studio, which is painfully slow).
 
 ## Authors
 
