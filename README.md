@@ -16,7 +16,7 @@ ITCS424's term project. A mobile application written in Flutter that uses Unity 
 
 #### Unity app compilation
 
-1. Clone our Unity project from [this link](http://www.example.com).
+1. Clone our Unity project from [this link](https://drive.google.com/drive/folders/14BXlUp-Io1uhbDFLayVoEXiOd-QqsBtY?usp=share_link).
 2. Follow the Setup of [juicycleff/flutter-unity-view-widget](https://github.com/juicycleff/flutter-unity-view-widget) for android to get `android/unityLibrary`.
 
 #### Firebase Realtime database setup
@@ -33,7 +33,7 @@ For debug build
 flutter run
 ```
 
-The application can't ran on system with x86 architecture (if you persist to run on emulator, you must run it on arm64 emulator from android studio, which is painfully slow).
+The application can't ran on system with x86 architecture (if you persist, you can run on arm64 emulator from android studio which is painfully slow).
 
 ## Authors
 
