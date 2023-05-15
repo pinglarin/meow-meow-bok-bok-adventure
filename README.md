@@ -12,6 +12,9 @@ ITCS424's term project. A mobile application written in Flutter that uses Unity 
 - Firebase
 - A lot of time (because you gonna failed to build it a lot)
 
+### Install Photon
+Follow instructions on the https://doc.photonengine.com/pun/v2/demos-and-tutorials/pun-basics-tutorial/intro to connect to Photon.
+
 ### Installation process
 
 #### Unity app compilation
